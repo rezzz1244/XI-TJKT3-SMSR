@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XI TJKT 3 - SMKN 9 Surakarta</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a7/Smkn9surakarta.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root{
+      --bg:#05060a;
+      --text:#dbeafe;
+      --accent-1:#38bdf8;
+      --accent-2:#7c3aed;
+      --accent-3:#06b6d4;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Poppins,system-ui,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    canvas#netCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block;}
+
+    header{position:fixed;top:0;left:0;right:0;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 30px;background:rgba(0,0,0,0.45);backdrop-filter:blur(10px);z-index:10}
+    .brand{font-weight:700;font-size:18px;letter-spacing:0.6px;}
+    nav ul{display:flex;list-style:none;gap:20px}
+    nav a{color:var(--text);text-decoration:none;font-weight:600;transition:.3s;padding:6px 10px;border-radius:8px;}
+    nav a:hover,nav a.active{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;}
+
+    main{padding-top:90px;max-width:1200px;margin:auto;padding-inline:20px;}
+
+    section{margin-bottom:60px;opacity:0;transform:translateY(40px);transition:all 1s ease;scroll-margin-top:80px}
+    section.show{opacity:1;transform:translateY(0)}
+
+    .hero{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:100vh;text-align:center;}
+    .hero h1{font-size:3rem;background:linear-gradient(90deg,var(--accent-1),var(--accent-3),var(--accent-2));-webkit-background-clip:text;color:transparent;margin-bottom:20px}
+    .hero p{max-width:700px;opacity:0.85}
+
+    .card{background:rgba(255,255,255,0.05);border-radius:14px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+
+    .jadwal-table{width:100%;border-collapse:collapse;margin-top:15px}
+    th,td{padding:10px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+    th{color:var(--accent-1)}
+
+    footer{text-align:center;padding:20px;font-size:14px;opacity:0.8}
+
+    .socials{display:flex;justify-content:center;gap:25px;margin-top:20px}
+    .socials a{color:var(--text);font-size:1.8rem;transition:.3s}
+    .socials a:hover{color:var(--accent-1)}
+  </style>
+</head>
+<body>
+  <canvas id="netCanvas"></canvas>
+
+  <header>
+    <div class="brand">XI TJKT 3 • SMKN 9 SURAKARTA</div>
+    <nav>
+      <ul>
+        <li><a href="#beranda" class="active">Beranda</a></li>
+        <li><a href="#jadwal">Jadwal Blok</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#sosmed">Sosial Media</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="beranda" class="hero">
+      <h1>Selamat Datang di XI TJKT 3</h1>
+      <p>Kelas Teknologi Jaringan Komputer dan Telekomunikasi — berjiwa kreatif, solid, dan inovatif. Jelajahi informasi lengkap tentang jadwal blok dan kegiatan kami.</p>
+    </section>
+
+    <section id="jadwal" class="card">
+      <h2>📅 Jadwal Blok</h2>
+      <h3>Blok A</h3>
+      <table class="jadwal-table">
+        <tr><th>Jam</th><th>Senin</th><th>Selasa</th><th>Rabu</th><th>Kamis</th><th>Jumat</th></tr>
+        <tr><td>1</td><td>Senin Karakter</td><td>Matematika</td><td>PAB</td><td>Sejarah</td><td>B.Inggris</td></tr>
+        <tr><td>2</td><td>Senin Karakter</td><td>Matematika</td><td>PAB</td><td>Sejarah</td><td>B.Inggris</td></tr>
+        <tr><td>3</td><td>B.Indonesia</td><td>Matematika</td><td>PAB</td><td>B.Inggris</td><td>B.Inggris</td></tr>
+        <tr><td>4</td><td>B.Indonesia</td><td>B.Jawa</td><td>B.Indonesia</td><td>B.Inggris</td><td>B.Inggris</td></tr>
+        <tr><td>5</td><td>B.Indonesia</td><td>B.Jawa</td><td>B.Indonesia</td><td>B.Inggris</td><td>PPKN</td></tr>
+        <tr><td>6</td><td>Matematika</td><td>PAB</td><td>B.Indonesia</td><td>B.Inggris</td><td>PPKN</td></tr>
+        <tr><td>7</td><td>Matematika</td><td>PAB</td><td>Sejarah</td><td>PJOK</td><td>PPKN</td></tr>
+        <tr><td>8</td><td>Matematika</td><td>PAB</td><td>Sejarah</td><td>PJOK</td><td>PPKN</td></tr>
+        <tr><td>9</td><td>B.Konseling</td><td>-</td><td>-</td><td>PJOK</td><td>-</td></tr>
+        <tr><td>10</td><td>B.Konseling</td><td>-</td><td>-</td><td>PJOK</td><td>-</td></tr>
+      </table>
+
+      <h3 style="margin-top:40px">Blok B</h3>
+      <table class="jadwal-table">
+        <tr><th>Jam</th><th>Senin</th><th>Selasa</th><th>Rabu</th><th>Kamis</th><th>Jumat</th></tr>
+        <tr><td>1</td><td>Senin Karakter</td><td>Konsentrasi 1</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Mapel Pilihan</td></tr>
+        <tr><td>2</td><td>Senin Karakter</td><td>Konsentrasi 1</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Mapel Pilihan</td></tr>
+        <tr><td>3</td><td>Konsentrasi 2</td><td>Konsentrasi 1</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Mapel Pilihan</td></tr>
+        <tr><td>4</td><td>Konsentrasi 2</td><td>Konsentrasi 1</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Mapel Pilihan</td></tr>
+        <tr><td>5</td><td>Konsentrasi 2</td><td>Konsentrasi 1</td><td>Konsentrasi 2</td><td>Konsentrasi 3</td><td>Konsentrasi 2</td></tr>
+        <tr><td>6</td><td>Konsentrasi 2</td><td>Konsentrasi 1</td><td>Konsentrasi 2</td><td>Konsentrasi 3</td><td>Konsentrasi 2</td></tr>
+        <tr><td>7</td><td>PKKWU</td><td>Konsentrasi 1</td><td>Konsentrasi 2</td><td>Konsentrasi 3</td><td>Konsentrasi 2</td></tr>
+        <tr><td>8</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Konsentrasi 2</td><td>Mapel Pilihan</td><td>Konsentrasi 2</td></tr>
+        <tr><td>9</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Konsentrasi 1</td><td>Mapel Pilihan</td><td>-</td></tr>
+        <tr><td>10</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Konsentrasi 1</td><td>Mapel Pilihan</td><td>-</td></tr>
+        <tr><td>11</td><td>PKKWU</td><td>Konsentrasi 3</td><td>Konsentrasi 1</td><td>Mapel Pilihan</td><td>-</td></tr>
+      </table>
+    </section>
+
+    <section id="galeri" class="card">
+      <h2>📸 Foto</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:20px">
+        <img src="https://i.imgur.com/JDf0NQ9.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 1">
+        <img src="https://i.imgur.com/mSazY76.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 2">
+        <img src="https://i.imgur.com/1ViruUW.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 3">
+        <img src="https://i.imgur.com/XLpOsZf.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 4">
+        <img src="https://i.imgur.com/L8ZodnU.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 5">
+        <img src="https://i.imgur.com/W8bn9mN.jpeg" loading="lazy" style="border-radius:10px;width:100%" alt="Galeri 6">
+      </div>
+    </section>
+
+    <section id="sosmed" class="card">
+      <h2>🌐 Sosial Media Kami</h2>
+      <p>Ikuti dan terhubung dengan kami di platform berikut:</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/genextree.lanska?igsh=bnZmMHJtc2lkcTlx" target=_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@genextree.lanska?_t=ZS-90vfZVm0izy&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 XI TJKT 3 — SMKN 9 Surakarta</footer>
+
+  <script>
+    const navLinks=document.querySelectorAll('nav a');
+    const sections=document.querySelectorAll('main section');
+    window.addEventListener('scroll',()=>{
+      let current='';
+      sections.forEach(section=>{const top=section.offsetTop-100;if(pageYOffset>=top)current=section.id;});
+      navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
+    });
+    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:0.2});
+    document.querySelectorAll('section').forEach(s=>io.observe(s));
+
+    const c=document.getElementById('netCanvas'),x=c.getContext('2d');let d=window.devicePixelRatio||1;
+    function r(){d=window.devicePixelRatio||1;c.width=innerWidth*d;c.height=innerHeight*d;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';x.setTransform(d,0,0,d,0,0)}
+    window.addEventListener('resize',r);r();
+    const n=[];const colors=['rgba(56,189,248,0.95)','rgba(6,182,212,0.9)','rgba(124,58,237,0.92)'];
+    for(let i=0;i<40;i++)n.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,c:colors[i%colors.length]});
+    function a(){x.clearRect(0,0,c.width/d,c.height/d);for(let i=0;i<n.length;i++){let o=n[i];o.x+=o.vx;o.y+=o.vy;if(o.x<0||o.x>innerWidth)o.vx*=-1;if(o.y<0||o.y>innerHeight)o.vy*=-1;x.fillStyle=o.c;x.beginPath();x.arc(o.x,o.y,2,0,2*Math.PI);x.fill();for(let j=i+1;j<n.length;j++){let p=n[j],dx=o.x-p.x,dy=o.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<160){x.strokeStyle=o.c;x.globalAlpha=0.1;x.beginPath();x.moveTo(o.x,o.y);x.lineTo(p.x,p.y);x.stroke();x.globalAlpha=1;}}}requestAnimationFrame(a)}a();
+  </script>
+</body>
+</html>
